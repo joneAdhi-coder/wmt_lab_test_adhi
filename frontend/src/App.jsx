@@ -123,7 +123,7 @@ function App() {
       <div className="list-section">
         <h2>Students List</h2>
 
-        {students.length === 0 ? (
+        {(!Array.isArray(students) || students.length === 0) ? (
           <p>No students found.</p>
         ) : (
           <ul>
