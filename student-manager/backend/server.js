@@ -4,11 +4,11 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
-const studentRoutes = require("./routes/students");
-app.use("/students", studentRoutes);
-
 app.use(cors());
 app.use(express.json());
+
+const studentRoutes = require("./routes/students");
+app.use("/students", studentRoutes);
 
 // MongoDB connect
 mongoose.connect(process.env.MONGO_URI)
